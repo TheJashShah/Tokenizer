@@ -40,6 +40,11 @@ class DataCollector:
                 "pallets/flask",
                 "psf/requests",
                 "django/django",
+                "pandas-dev/pandas",
+                "scikit-learn/scikit-learn",
+                "ansible/ansible",
+                "apache/airflow",
+                "pytest-dev/pytest"
             ],
 
             "cpp": [
@@ -48,6 +53,11 @@ class DataCollector:
                 "llvm/llvm-project",
                 "bitcoin/bitcoin",
                 "catchorg/Catch2",
+                "godotengine/godot",
+                "ggml-org/llama.cpp",
+                "protocolbuffers/protobuf",
+                "tesseract-ocr/tesseract",
+                "grpc/grpc"
             ],
 
             "javascript": [
@@ -56,6 +66,10 @@ class DataCollector:
                 "expressjs/express",
                 "axios/axios",
                 "vuejs/core",
+                "mrdoob/three.js",
+                "vercel/next.js",
+                "electron/electron",
+                "webpack/webpack"
             ],
 
             "java": [
@@ -64,6 +78,10 @@ class DataCollector:
                 "elastic/elasticsearch",
                 "google/guava",
                 "apache/maven",
+                "MinecraftForge/MinecraftForge",
+                "jenkinsci/jenkins",
+                "apache/cassandra",
+                "dbeaver/dbeaver"
             ],
 
             "rust": [
@@ -72,6 +90,10 @@ class DataCollector:
                 "serde-rs/serde",
                 "clap-rs/clap",
                 "BurntSushi/ripgrep",
+                "rustdesk/rustdesk",
+                "bevyengine/bevy",
+                "tauri-apps/tauri",
+                "nushell/nushell"
             ],
         }
         
@@ -94,33 +116,44 @@ class DataCollector:
             
             "english": [
                 "https://feeds.bbci.co.uk/news/rss.xml",
-                "https://feeds.skynews.com/feeds/rss/home.xml"
+                "https://feeds.skynews.com/feeds/rss/home.xml", 
+                "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+                "https://moxie.foxnews.com/google-publisher/world.xml"
             ],
 
             "hindi": [
                 "https://feeds.bbci.co.uk/hindi/rss.xml",
-                "https://www.republicbharat.com/rss/india.xml"
+                "https://www.republicbharat.com/rss/india.xml",
+                "https://hindi.news18.com/commonfeeds/v1/hin/rss/world/rest-of-world.xml",
+                "https://www.amarujala.com/rss/breaking-news.xml"
             ],
 
             "japanese": [
                 "https://feeds.bbci.co.uk/japanese/rss.xml",
-                "https://rss.asahi.com/rss/asahi/newsheadlines.rdf"
+                "https://rss.asahi.com/rss/asahi/newsheadlines.rdf",
+                "https://news.livedoor.com/topics/rss/dom.xml",
+                "https://www3.nhk.or.jp/rss/news/cat0.xml"
             ],
 
             "french": [
                 "https://www.france24.com/fr/rss",
-                "https://www.mediapart.fr/articles/feed"
-                
+                "https://www.mediapart.fr/articles/feed",
+                "https://www.ouest-france.fr/rss/une",
+                "https://www.sudouest.fr/essentiel/rss.xml"
             ],
 
             "german": [
                 "https://www.deutschland.de/de/feed-news/rss.xml",
-                "https://newsfeed.zeit.de/index"
+                "https://newsfeed.zeit.de/index",
+                "https://www.n-tv.de/rss",
+                "https://www.welt.de/feeds/latest.rss"
             ],
 
             "spanish": [
                 "https://feeds.bbci.co.uk/mundo/rss.xml",
-                "https://e00-elmundo.uecdn.es/rss/portada.xml"
+                "https://e00-elmundo.uecdn.es/rss/portada.xml",
+                "https://eldiariony.com/feed/",
+                "https://www.eldiario.es/rss"
             ],
         }
         

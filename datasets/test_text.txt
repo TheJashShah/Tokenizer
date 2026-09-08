@@ -1,0 +1,313 @@
+English
+-------
+
+The development of artificial intelligence has changed the way people interact with computers. Modern language models can process enormous collections of text, identify statistical patterns, and generate surprisingly coherent responses. However, understanding how these systems represent information internally remains an important research problem.
+
+A tokenizer sits between raw text and a neural network. It converts characters, words, punctuation, and other symbols into a sequence of integer token IDs. Different tokenization strategies can produce dramatically different sequences for the same sentence. Vocabulary size, training data, regular expressions, and the underlying merge rules all influence the final representation.
+
+In 2026, researchers continue to study whether larger language models necessarily develop better representations, or whether some improvements simply emerge from scale. A small experiment with a different corpus can sometimes reveal interesting behavior. For example, multilingual data may cause frequently occurring words in one language to receive very different tokenizations from words in another language.
+
+The quick brown fox jumps over the lazy dog. Machine learning, natural language processing, computer vision, reinforcement learning, and mechanistic interpretability are all active areas of research.
+
+German
+------
+
+Künstliche Intelligenz verändert die Art und Weise, wie Menschen mit Computern interagieren. Große Sprachmodelle können riesige Mengen an Text verarbeiten und dabei komplexe statistische Muster erkennen. Trotzdem ist noch nicht vollständig verstanden, wie Informationen innerhalb solcher Modelle dargestellt und verarbeitet werden.
+
+Die deutsche Sprache enthält viele zusammengesetzte Wörter. Wörter wie Bundesverfassungsgericht, Geschwindigkeitsbegrenzung und Datenverarbeitung können für einen Tokenizer besonders interessant sein. Auch Umlaute wie ä, ö und ü sowie das Zeichen ß müssen korrekt verarbeitet werden.
+
+Ein sonniger Morgen in München begann mit einer Tasse Kaffee und einem langen Spaziergang durch die Stadt. Währenddessen las ich einen Artikel über Wissenschaft, Technologie und die Zukunft des maschinellen Lernens.
+
+Japanisch
+--------
+
+人工知能は、コンピュータと人間の関係を大きく変えています。大規模言語モデルは大量の文章を学習し、さまざまなパターンを認識することができます。しかし、モデルの内部で情報がどのように表現されているのかを理解することは、依然として重要な研究課題です。
+
+日本語には、英語とは異なる文字体系があります。ひらがな、カタカナ、漢字が同じ文章の中で使われることもあります。例えば、「東京で人工知能について研究しています」という文には、漢字、ひらがな、助詞などが含まれています。
+
+春になると、桜の花が東京の公園を美しく彩ります。多くの人々が友達や家族と一緒に公園を訪れ、写真を撮ったり、食事をしたりします。
+
+スペイン語
+----------
+
+La inteligencia artificial está transformando la manera en que utilizamos los ordenadores. Los modelos de lenguaje pueden analizar grandes cantidades de información y aprender patrones complejos a partir de los datos.
+
+El idioma español utiliza caracteres especiales como á, é, í, ó, ú, ü y ñ. Una buena herramienta de tokenización debe ser capaz de representar correctamente estos caracteres sin perder información.
+
+En Madrid, una tarde tranquila puede convertirse rápidamente en una conversación sobre ciencia, tecnología, programación y el futuro de la inteligencia artificial. Los investigadores también estudian cómo los modelos multilingües representan diferentes idiomas.
+
+Bonjour, le monde
+-----------------
+
+La recherche en intelligence artificielle progresse rapidement. Les modèles de langage modernes peuvent comprendre et produire du texte dans plusieurs langues, mais leur fonctionnement interne reste difficile à expliquer.
+
+Le français possède plusieurs caractères accentués : à, â, ä, ç, é, è, ê, ë, î, ï, ô, ö, ù, û et ü. Ces caractères sont particulièrement utiles pour tester un tokenizer multilingue.
+
+Paris est une ville connue pour son architecture, ses musées, ses cafés et son histoire. Une phrase simple comme « Les chercheurs analysent les données » peut être représentée de nombreuses manières différentes selon le tokenizer utilisé.
+
+हिन्दी
+------
+
+कृत्रिम बुद्धिमत्ता आज हमारे जीवन के अनेक क्षेत्रों को प्रभावित कर रही है। बड़े भाषा मॉडल बहुत बड़ी मात्रा में पाठ को संसाधित कर सकते हैं और उनमें मौजूद पैटर्न को सीख सकते हैं। फिर भी, इन मॉडलों के अंदर ज्ञान किस प्रकार संग्रहीत और उपयोग किया जाता है, यह अभी भी एक महत्वपूर्ण शोध प्रश्न है।
+
+हिंदी भाषा में देवनागरी लिपि का प्रयोग किया जाता है। उदाहरण के लिए, "भारत एक विविध और प्राचीन देश है" वाक्य में कई अलग-अलग वर्ण और मात्राएँ दिखाई देती हैं।
+
+मुंबई भारत का एक प्रमुख शहर है। यहाँ विज्ञान, प्रौद्योगिकी, वित्त, मनोरंजन और शिक्षा के कई महत्वपूर्ण केंद्र हैं। कंप्यूटर विज्ञान के विद्यार्थी अक्सर प्रोग्रामिंग, मशीन लर्निंग और कृत्रिम बुद्धिमत्ता के बारे में अध्ययन करते हैं।
+
+Emoji and symbols
+-----------------
+
+Hello 🌍! Artificial intelligence is fascinating 🤖✨.
+
+😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘
+
+🚀 🛰️ 🌙 ⭐ 🌞 🌈 🔥 💡 🧠 💻 📚 🔬 🧪 ⚙️ 🎮 🎵
+
+I ❤️ programming. Python 🐍 is fun, Rust 🦀 is fast, and Java ☕ is everywhere.
+
+Unicode testing: café, naïve, résumé, München, Straße, 東京, 日本語, España, français, हिन्दी, 🚀.
+
+Numbers and symbols
+-------------------
+
+0 1 2 3 4 5 6 7 8 9
+10 100 1000 10,000 1,000,000
+3.141592653589793
+2.718281828459045
+2026-09-08
+12:30:45
+$100 €200 £300 ¥400 ₹500
++ - * / = == != <= >=
+< > { } [ ] ( ) ; : , . ! ? @ # $ % ^ & *
+
+Python
+------
+
+def tokenize_text(text, pattern):
+    """Split text into chunks and convert them into UTF-8 bytes."""
+    chunks = pattern.findall(text)
+
+    tokens = []
+    for chunk in chunks:
+        tokens.extend(chunk.encode("utf-8"))
+
+    return tokens
+
+
+class Tokenizer:
+    def __init__(self, vocab_size=50257):
+        self.vocab_size = vocab_size
+        self.vocab = {}
+        self.merges = {}
+
+    def encode(self, text):
+        tokens = []
+        for byte in text.encode("utf-8"):
+            tokens.append(byte)
+        return tokens
+
+    def decode(self, tokens):
+        data = bytes(tokens)
+        return data.decode("utf-8")
+
+
+def get_stats(ids):
+    counts = {}
+    for pair in zip(ids, ids[1:]):
+        counts[pair] = counts.get(pair, 0) + 1
+    return counts
+
+
+if __name__ == "__main__":
+    text = "Hello, world! 🌍"
+    tokenizer = Tokenizer()
+    print(tokenizer.encode(text))
+
+Java
+----
+
+public class Tokenizer {
+    private final int vocabSize;
+
+    public Tokenizer(int vocabSize) {
+        this.vocabSize = vocabSize;
+    }
+
+    public int[] encode(String text) {
+        byte[] bytes = text.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        int[] tokens = new int[bytes.length];
+
+        for (int i = 0; i < bytes.length; i++) {
+            tokens[i] = bytes[i] & 0xFF;
+        }
+
+        return tokens;
+    }
+
+    public String decode(int[] tokens) {
+        byte[] bytes = new byte[tokens.length];
+
+        for (int i = 0; i < tokens.length; i++) {
+            bytes[i] = (byte) tokens[i];
+        }
+
+        return new String(
+            bytes,
+            java.nio.charset.StandardCharsets.UTF_8
+        );
+    }
+
+    public static void main(String[] args) {
+        Tokenizer tokenizer = new Tokenizer(50257);
+        System.out.println(tokenizer.encode("Hello 🌍"));
+    }
+}
+
+JavaScript
+----------
+
+function encode(text) {
+    const encoder = new TextEncoder();
+    const bytes = encoder.encode(text);
+
+    return Array.from(bytes);
+}
+
+function decode(tokens) {
+    const bytes = new Uint8Array(tokens);
+    const decoder = new TextDecoder("utf-8");
+
+    return decoder.decode(bytes);
+}
+
+class Tokenizer {
+    constructor(vocabSize = 50257) {
+        this.vocabSize = vocabSize;
+        this.vocab = new Map();
+        this.merges = new Map();
+    }
+
+    tokenize(text) {
+        return encode(text);
+    }
+}
+
+const tokenizer = new Tokenizer();
+const text = "Hello, world! 🚀";
+console.log(tokenizer.tokenize(text));
+
+C++
+---
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <utility>
+
+class Tokenizer {
+private:
+    int vocab_size;
+
+public:
+    explicit Tokenizer(int size = 50257)
+        : vocab_size(size) {}
+
+    std::vector<unsigned int> encode(const std::string& text) {
+        std::vector<unsigned int> tokens;
+
+        for (unsigned char c : text) {
+            tokens.push_back(static_cast<unsigned int>(c));
+        }
+
+        return tokens;
+    }
+
+    std::string decode(
+        const std::vector<unsigned int>& tokens
+    ) {
+        std::string result;
+
+        for (unsigned int token : tokens) {
+            result += static_cast<char>(token);
+        }
+
+        return result;
+    }
+};
+
+int main() {
+    Tokenizer tokenizer(50257);
+
+    std::string text =
+        "Hello, world! Привет! こんにちは!";
+
+    auto tokens = tokenizer.encode(text);
+
+    for (auto token : tokens) {
+        std::cout << token << " ";
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
+
+Rust
+----
+
+use std::collections::HashMap;
+
+struct Tokenizer {
+    vocab_size: usize,
+    vocab: HashMap<usize, Vec<u8>>,
+}
+
+impl Tokenizer {
+    fn new(vocab_size: usize) -> Self {
+        Self {
+            vocab_size,
+            vocab: HashMap::new(),
+        }
+    }
+
+    fn encode(&self, text: &str) -> Vec<u8> {
+        text.as_bytes().to_vec()
+    }
+
+    fn decode(&self, tokens: &[u8]) -> String {
+        String::from_utf8_lossy(tokens).to_string()
+    }
+}
+
+fn main() {
+    let tokenizer = Tokenizer::new(50257);
+
+    let text = "Hello, world! 🌍";
+    let tokens = tokenizer.encode(text);
+
+    println!("{:?}", tokens);
+
+    let decoded = tokenizer.decode(&tokens);
+    println!("{}", decoded);
+}
+
+Mixed content
+-------------
+
+Machine learning is not limited to English. Ein Modell kann mehrere Sprachen verstehen. 日本語の文章も処理できます。Los modelos multilingües son cada vez más importantes. Les chercheurs analysent les représentations internes. हिंदी में भी बड़े भाषा मॉडल विकसित किए जा रहे हैं。
+
+The same concept can appear in many languages:
+
+English: The future of technology depends on good research.
+Deutsch: Die Zukunft der Technologie hängt von guter Forschung ab.
+日本語: テクノロジーの未来は優れた研究にかかっています。
+Español: El futuro de la tecnología depende de una buena investigación.
+Français: L'avenir de la technologie dépend d'une bonne recherche.
+हिन्दी: प्रौद्योगिकी का भविष्य अच्छे शोध पर निर्भर करता है।
+
+Finally, some unusual combinations:
+abc123 XYZ789 foo_bar baz-qux hello.world
+नमस्ते123 東京2026 café42 Straße99
+<|endoftext|> Hello world <|endoftext|> HashMap <|endoftext|> TextEncoder <|endoftext|>
+🤖AI🚀ML🧠NLP💻

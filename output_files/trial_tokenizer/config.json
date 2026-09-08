@@ -1,0 +1,10 @@
+{
+    "vocab_size": 557,
+    "base_vocab_size": 256,
+    "num_merges": 300,
+    "special_tokens": {
+        "<|endoftext|>": 556
+    },
+    "regex_pattern": "'(?i:[sdmt]|ll|ve|re)|[^\\r\\n\\p{L}\\p{N}]?+\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]++[\\r\\n]*|\\s*[\\r\\n]|\\s+(?!\\S)|\\s+",
+    "regex_name": "GPT4"
+}
