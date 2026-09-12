@@ -1,0 +1,28 @@
+Mixed Sample Text 🚀🌍✨
+
+Hello World! こんにちは! Bonjour! Hola! Здравствуйте! 你好! 🙋‍♂️
+
+Here's a bit of math: The quadratic formula is x = (-b ± √(b² - 4ac)) / 2a, and Euler's identity is e^(iπ) + 1 = 0. Also, Σ(i=1 to n) i = n(n+1)/2 📐
+
+A little code snippet (Python):
+
+def greet(name: str) -> str:
+    emojis = ["👋", "🎉", "🔥"]
+    return f"Hey {name}! {emojis[len(name) % len(emojis)]}"
+
+print(greet("World"))  # Hey World! 🎉
+
+Some emoji fun: 😀😂🥳🤔🧠💻🐍🎮🍕🍜🌮🎵🎨🏔️🌊🔥❄️⚡🌈
+
+Special characters & symbols: café, naïve, résumé, Ñoño, über, 日本語, العربية, हिन्दी, ελληνικά
+
+A quick table:
+
+Language | Greeting   | Emoji
+---------|------------|------
+English  | Hello      | 👋
+Japanese | こんにちは  | 🎌
+Spanish  | Hola       | 💃
+Arabic   | مرحبا       | 🕌
+
+Fraction/unicode math: ½ + ¼ = ¾, and π ≈ 3.14159, √2 ≈ 1.41421

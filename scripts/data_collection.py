@@ -405,7 +405,7 @@ class DataCollector:
                     if bytes_ > remaining:
                         
                         encoded = text.encode("utf-8")
-                        text = encoded[:remaining].decode("utf-8", errors="ignore")
+                        text = encoded[:int(remaining)].decode("utf-8", errors="ignore")
                         collected_bytes += remaining
                         
                     collected_files.append(text)
