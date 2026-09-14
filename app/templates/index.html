@@ -34,13 +34,15 @@
         <div class="tokenizer-result">
             <div class="custom-result">
                 <h2>Our Tokenizer:</h2>
-                <p>Tokens: {{ results['tokens_custom'] }}</p>
+                <details class="token-ids-container">
+                    <summary>Tokens: {% for token in results['tokens_custom'][:8] %}{{ token }}{% if not loop.last %}, {% endif %}{% endfor %}{% if results['tokens_custom']|length > 8 %}, ...{% endif %}</summary>
+                    <div class="token-ids-expanded">{{ results['tokens_custom'] }}</div>
+                </details>
                 <p>Number of Tokens: {{ results['tokens_custom']|length }}</p>
-                <p>Highlighted Text:
-                    {% for tok in results['decoded_tokens_custom'] %}
-                        <span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>
-                    {% endfor %}
-                </p>
+                <p>Highlighted Text:</p>
+                <div class="highlighted-text">
+                    {% for tok in results['decoded_tokens_custom'] %}<span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>{% endfor %}
+                </div>
                 <p>Vocab Size: {{ results['vocab_size'] }}</p>
                 {% if results['match'] %}
                     <p>The decoded tokens and the original text match.</p>
@@ -50,36 +52,32 @@
             </div>
             <div class="gpt2-result">
                 <h2>GPT-2 Tokenizer:</h2>
-                <p>Tokens: {{ results['tokens_gpt2'] }}</p>
+                <details class="token-ids-container">
+                    <summary>Tokens: {% for token in results['tokens_gpt2'][:8] %}{{ token }}{% if not loop.last %}, {% endif %}{% endfor %}{% if results['tokens_gpt2']|length > 8 %}, ...{% endif %}</summary>
+                    <div class="token-ids-expanded">{{ results['tokens_gpt2'] }}</div>
+                </details>
                 <p>Number of Tokens: {{ results['tokens_gpt2']|length }}</p>
-                <p>Highlighted Text:
-                    {% for tok in results['decoded_tokens_gpt2'] %}
-                        {% if "\ufffd" in tok %}
-                            <span class="tok tok-unk">{{ tok }}</span>
-                        {% else %}
-                            <span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>
-                        {% endif %}
-                    {% endfor %}
-                </p>
+                <p>Highlighted Text:</p>
+                <div class="highlighted-text">
+                    {% for tok in results['decoded_tokens_gpt2'] %}{% if "\ufffd" in tok %}<span class="tok tok-unk">{{ tok }}</span>{% else %}<span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>{% endif %}{% endfor %}
+                </div>
                 <p>Vocab Size: {{ results['vocab_size_gpt2'] }}</p>
             </div>
             <div class="gpt4-result">
                 <h2>GPT-4 Tokenizer:</h2>
-                <p>Tokens: {{ results['tokens_gpt4'] }}</p>
+                <details class="token-ids-container">
+                    <summary>Tokens: {% for token in results['tokens_gpt4'][:8] %}{{ token }}{% if not loop.last %}, {% endif %}{% endfor %}{% if results['tokens_gpt4']|length > 8 %}, ...{% endif %}</summary>
+                    <div class="token-ids-expanded">{{ results['tokens_gpt4'] }}</div>
+                </details>
                 <p>Number of Tokens: {{ results['tokens_gpt4']|length }}</p>
-                <p>Highlighted Text:
-                    {% for tok in results['decoded_tokens_gpt4'] %}
-                        {% if "\ufffd" in tok %}
-                            <span class="tok tok-unk">{{ tok }}</span>
-                        {% else %}
-                            <span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>
-                        {% endif %}
-                    {% endfor %}
-                </p>
+                <p>Highlighted Text:</p>
+                <div class="highlighted-text">
+                    {% for tok in results['decoded_tokens_gpt4'] %}{% if "\ufffd" in tok %}<span class="tok tok-unk">{{ tok }}</span>{% else %}<span class="tok tok-{{ loop.index0 % 6 }}">{{ tok }}</span>{% endif %}{% endfor %}
+                </div>
                 <p>Vocab Size: {{ results['vocab_size_gpt4'] }}</p>
             </div>
-            <p>Total time taken: {{ total_time }}</p>
-            <p>Length of text: {{ length_ }}</p>
+            <p>Total time taken: {{ total_time }} seconds.</p>
+            <p>Length of text: {{ length_ }}.</p>
         </div>
     {% elif error %}
         <p class="error">{{ error }}</p>

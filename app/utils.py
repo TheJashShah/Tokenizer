@@ -58,7 +58,7 @@ def encode_decode(text, vocab_size, tokenizer):
     
     for token in tokens_gpt2:
         token_bytes = enc_gpt2.decode_single_token_bytes(token)
-        decoded_tokens_gpt2.append(token_bytes.decode("utf-8", errors="replace"))
+        decoded_tokens_gpt2.append(token_bytes.decode("utf-8", errors="ignore"))
         
     enc_gpt4 = tiktoken.get_encoding("cl100k_base")
     tokens_gpt4 = enc_gpt4.encode(text, allowed_special={"<|endoftext|>"})
@@ -66,7 +66,7 @@ def encode_decode(text, vocab_size, tokenizer):
     
     for token in tokens_gpt4:
         token_bytes = enc_gpt4.decode_single_token_bytes(token)
-        decoded_tokens_gpt4.append(token_bytes.decode("utf-8", errors="replace"))
+        decoded_tokens_gpt4.append(token_bytes.decode("utf-8", errors="ignore"))
     
     return {
         "tokens_custom": tokens,

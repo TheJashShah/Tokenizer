@@ -112,7 +112,7 @@ input[type="submit"]:hover {
 
 .tokenizer-result {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 18px;
 }
 
@@ -125,6 +125,16 @@ input[type="submit"]:hover {
     border-radius: 2px;
 }
 
+.custom-result h2,
+.gpt2-result h2,
+.gpt4-result h2 {
+    margin: 0 0 14px;
+    font-family: "ETBook", "Baskerville", "Georgia", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #25231f;
+}
+
 .custom-result { border-top: 3px solid #5c5549; }
 .gpt2-result   { border-top: 3px solid #8c8273; }
 .gpt4-result   { border-top: 3px solid #b5ac9e; }
@@ -134,10 +144,10 @@ input[type="submit"]:hover {
     font-size: 0.85rem;
     color: #555;
     margin: 8px 0;
-    word-break: break-word;
+    word-break: normal;
 }
 
-.token-ids-summary {
+.token-ids-container summary {
     cursor: pointer;
     user-select: none;
     padding: 4px 6px;
@@ -147,8 +157,36 @@ input[type="submit"]:hover {
     transition: background 0.15s ease;
 }
 
-.token-ids-summary:hover {
+.token-ids-container summary:hover {
     background: #ebe4d5;
+}
+
+.token-ids-expanded {
+    max-height: 150px;
+    margin-top: 8px;
+    padding: 10px;
+    overflow: auto;
+    background: #faf8f2;
+    border: 1px solid #dcd5c4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.highlighted-text {
+    min-height: 180px;
+    width: 100%;
+    margin: 8px 0 16px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    overflow-y: auto;
+    background: #faf8f2;
+    border: 1px solid #dcd5c4;
+    border-radius: 3px;
+    font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", ui-monospace, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .tok {
@@ -187,9 +225,7 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 900px) {
-    .tokenizer-result {
-        grid-template-columns: 1fr;
-    }
+    .tokenizer-result { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 650px) {
@@ -282,14 +318,14 @@ h1 {
     margin-bottom: 24px;
 }
 
-.gpt4-100mb {
+.benchmark {
     margin-top: 28px;
     padding-top: 22px;
 
     border-top: 1px solid #e3decb;
 }
 
-.gpt4-100mb h4 {
+.benchmark h4 {
     margin: 0 0 18px;
 
     font-family: "ETBook", "Baskerville", "Georgia", serif;
@@ -299,7 +335,7 @@ h1 {
     color: #38342e;
 }
 
-.gpt4-100mb img {
+.benchmark img {
     display: block;
 
     width: 100%;
@@ -369,7 +405,7 @@ h1 {
         font-size: 0.98rem;
     }
 
-    .gpt4-100mb img {
+    benchmark img {
         width: 100%;
     }
 }

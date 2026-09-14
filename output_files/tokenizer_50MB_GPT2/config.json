@@ -1,0 +1,10 @@
+{
+    "vocab_size": 50257,
+    "base_vocab_size": 256,
+    "num_merges": 50000,
+    "special_tokens": {
+        "<|endoftext|>": 50256
+    },
+    "regex_pattern": "'(?:[sdmt]|ll|ve|re)| ?\\p{L}+| ?\\p{N}+| ?[^\\s\\p{L}\\p{N}]+|\\s+(?!\\S)|\\s+",
+    "regex_name": "GPT2"
+}

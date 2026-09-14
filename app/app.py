@@ -5,7 +5,7 @@ import math
 
 app = Flask(__name__)
 
-available_tokenizers = {"100MB_GPT4", "50MB_GPT4"}
+available_tokenizers = {"100MB_GPT4", "50MB_GPT4", "50MB_GPT2", "100MB_GPT2"}
 
 @app.route("/", methods=["GET", "POST"])
 def index():

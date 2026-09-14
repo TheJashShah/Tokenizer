@@ -349,3 +349,197 @@ body {
 .export-footer a:hover {
     text-decoration: underline;
 }
+
+:root {
+    --tutorial-paper: #f7f4eb;
+    --tutorial-panel: #fffcf7;
+    --tutorial-code: #f3efe6;
+    --tutorial-border: #e3decb;
+    --tutorial-text: #4f4b44;
+    --tutorial-heading: #25231f;
+    --tutorial-muted: #777267;
+    --tutorial-mono: "JetBrains Mono", "Fira Code", "Source Code Pro", ui-monospace, monospace;
+}
+
+body {
+    padding: 40px 20px;
+    background-color: var(--tutorial-paper);
+    background-image: radial-gradient(#e2dcd0 0.75px, transparent 0.75px);
+    background-size: 16px 16px;
+    color: var(--tutorial-text);
+    font-family: "ETBook", "Baskerville", "Crimson Text", "Georgia", serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.notebook-container {
+    max-width: 1068px;
+    padding: 0;
+}
+
+.cell {
+    margin: 0 auto 24px;
+    align-items: flex-start;
+}
+
+.cell-prompt {
+    padding: 19px 12px 0 0;
+    color: var(--tutorial-muted);
+    font-family: var(--tutorial-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.cell-content {
+    min-width: 0;
+    width: 100%;
+    padding: 28px 34px;
+    background: var(--tutorial-panel);
+    border: 1px solid var(--tutorial-border);
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(60, 50, 30, 0.05), 0 1px 3px rgba(60, 50, 30, 0.03);
+}
+
+.markdown-cell {
+    padding: 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.markdown-cell h1,
+.markdown-cell h2,
+.markdown-cell h3,
+.markdown-cell h4,
+.markdown-cell h5,
+.markdown-cell h6 {
+    color: var(--tutorial-heading);
+    font-family: "ETBook", "Baskerville", "Georgia", serif;
+    font-weight: 400;
+}
+
+.markdown-cell h1 {
+    margin: 0 0 22px;
+    padding-bottom: 0;
+    border: 0;
+    font-size: 2.7rem;
+    line-height: 1.2;
+}
+
+.markdown-cell h2 {
+    margin: 1.5em 0 0.7em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--tutorial-border);
+    font-size: 1.45rem;
+}
+
+.markdown-cell h3 {
+    font-size: 1.25rem;
+}
+
+.markdown-cell a {
+    color: #5c5549;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.markdown-cell a:hover {
+    color: #1f1d1a;
+}
+
+.markdown-cell code,
+.markdown-cell pre,
+.input-area,
+.raw-cell {
+    background: var(--tutorial-code);
+    border-color: var(--tutorial-border);
+}
+
+.markdown-cell code,
+.markdown-cell pre,
+.input-area pre,
+.output-content pre,
+.output-stream,
+.raw-cell {
+    font-family: var(--tutorial-mono);
+}
+
+.markdown-cell pre,
+.input-area {
+    border-radius: 3px;
+}
+
+.input-area {
+    padding: 14px 16px;
+    border-left: 3px solid #8c8273;
+}
+
+.input-area pre,
+.output-content pre,
+.output-stream {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.output-area {
+    margin-top: 0;
+}
+
+.output-content {
+    padding: 10px 0 0;
+}
+
+.output-prompt {
+    color: #a8584d;
+}
+
+.output-result {
+    color: var(--tutorial-text);
+}
+
+.output-stderr,
+.output-error {
+    background: #f7ece9;
+    border-left: 3px solid #a8584d;
+}
+
+.output-image {
+    display: block;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--tutorial-border);
+    background: #ffffff;
+}
+
+.tokenizer-visual-output .output-stream {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    .cell {
+        display: block;
+    }
+
+    .cell-prompt {
+        width: auto;
+        min-width: 0;
+        padding: 0 0 6px;
+        text-align: left;
+    }
+
+    .prompt-empty {
+        display: none;
+    }
+
+    .cell-content {
+        padding: 20px;
+    }
+
+    .markdown-cell h1 {
+        font-size: 1.9rem;
+    }
+}

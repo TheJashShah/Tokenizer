@@ -11,7 +11,7 @@
 <div class="introduction">
     <h3>Introduction</h3>
     <p>
-        After learning tokenization from this <a href="https://in.video.search.yahoo.com/search/video?fr=mcafee&p=karpathy+video+tokenization&type=E210IN885G0#id=1&vid=bbde99b04c27eab81f3c0b774e8faf4f&action=click">great video</a>, 
+        After learning tokenization from this <a href="https://www.youtube.com/watch?v=zduSFxRajkE">great video</a>, 
         I started my own project to learn the coding concepts of tokenization, train one myself on a relatively small amount of data, 
         and then train multiple tokenizers with different parameters on sizable amount of texts.
         In this process, I made my own short tokenization tutorial in the form of a notebook, made a data collection tool to collect real data across multiple domains,
@@ -54,11 +54,22 @@
         I benchmark each tokenizer on varying vocabulary sizes from 1000, to 50257 (the max size), and plot things like token count, bytes-per-token, token-per-count, unique tokens.
         These are the results:
 
-        <div class="gpt4-100mb">
+        <div class="benchmark">
+            <H4>50MB, GPT2 REGEX</H4>
+            <img src="{{ url_for('static', filename='images/image_gpt2_50MB.png')}}" alt="Benchmark results for the tokenizer on 50MB data, GPT2 REGEX">
+        </div>
+        <div class="benchmark">
+            <H4>50MB, GPT4 REGEX</H4>
+            <img src="{{ url_for('static', filename='images/image_gpt4_50MB.png')}}" alt="Benchmark results for the tokenizer on 50MB data, GPT4 REGEX">
+        </div>
+        <div class="benchmark">
+            <H4>100MB, GPT2 REGEX</H4>
+            <img src="{{ url_for('static', filename='images/image_gpt2_100MB.png')}}" alt="Benchmark results for the tokenizer on 100MB data, GPT2 REGEX">
+        </div>
+        <div class="benchmark">
             <H4>100MB, GPT4 REGEX</H4>
             <img src="{{ url_for('static', filename='images/image_gpt4_100MB.png')}}" alt="Benchmark results for the tokenizer on 100MB data, GPT4 REGEX">
         </div>
     </p>
 </div>
-
 {% endblock %}
