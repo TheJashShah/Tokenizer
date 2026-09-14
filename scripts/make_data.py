@@ -4,7 +4,7 @@ import os
 root = os.getcwd()
 data_folder = os.path.join(root, "datasets")
 
-size = 100 # change only the size for an entirely new data corpus.
+size = 50 # change only the size for an entirely new data corpus.
 folder_name = f"data_{size}_MB"
 folder_path = os.path.join(data_folder, folder_name)
 

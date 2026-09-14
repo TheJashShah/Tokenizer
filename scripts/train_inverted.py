@@ -89,7 +89,8 @@ class InvertedJashTokenizer:
             max_pair = self.get_best_pair(pair_counts)
             idx =  (256 + i)
             
-            print(f"Merging {max_pair} into new token {idx}")
+            if i % 1000 == 0:
+                print(f"Merge {i} | Merging {max_pair} into new token {idx}")
             
             affected_chunks = list(pair_to_chunks.get(max_pair, set()))
             

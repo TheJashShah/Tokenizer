@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Blog</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/file.css') }}">
+{% endblock %}
+
+{% block body %}
+<h1>How did I make my tokenizers - An informal Blog</h1>
+
+<div class="introduction">
+    <h3>Introduction</h3>
+    <p>
+        After learning tokenization from this <a href="https://in.video.search.yahoo.com/search/video?fr=mcafee&p=karpathy+video+tokenization&type=E210IN885G0#id=1&vid=bbde99b04c27eab81f3c0b774e8faf4f&action=click">great video</a>, 
+        I started my own project to learn the coding concepts of tokenization, train one myself on a relatively small amount of data, 
+        and then train multiple tokenizers with different parameters on sizable amount of texts.
+        In this process, I made my own short tokenization tutorial in the form of a notebook, made a data collection tool to collect real data across multiple domains,
+        experimented with different optimizations to make the process of training a tokenizer faster, and finally trained six tokenizers. This blog will cover all details, informally.
+    </p>
+</div>
+
+<div class="tutorial">
+    <h3>Tutorial</h3>
+    <p>
+        My tokenization tutorial can be found <a href="/tutorial">here.</a> It is made as a short-form replica of the Karpathy's video,
+        providing all the code snippets needed for a naive-version of the tokenizer widely used. It also provides theoretical context
+        and some tangential discussion, which ultimately affects the design choices made to make the tokenizer.
+    </p>
+</div>
+
+<div class="data">
+    <h3>The data that I use</h3>
+    <p>
+        Before making the tokenizer, I made a utility class called DataCollector that collects data for six languages (English, Hindi, French, German, Japanese and Spanish), and five programming languages (Python, C++, Rust, Java, Javascript)
+        For the languages, data was collected from RSS news feeds in the particular language, and also from language-specific Wikipedia pages through a Huggingface dataset. For the programming languages, data was collected from popular github repositories with the majority of the code in that language.
+        The code for the DataCollector class, and an example on how to use that class can be found <a href="https://github.com/TheJashShah/Tokenizer">in this repository.</a>
+
+        A Choice was made to allocate 60% of the text corpus to the Languages, and 40% to the programming languages. This choice was made to show a comparison between my tokenizers and the GPT-2 and GPT-4 tokenizers on languages, on how specific words tokenize.
+    </p>
+</div>
+
+<div class="tokenizers">
+    <h3>Tokenizers and optimization</h3>
+    <p>
+        A primary parameter differentiating my tokenizers is the choice of the REGEX string used. There are two options, either the GPT-2 REGEX string, or the GPT-4 string.
+        The algorithm used is the Byte-Pair-Encoding (BPE) algorithm, as to make a fair comparison to the GPT tokenizers. The final tokenizer code is a heavily optimized version of the naive method,
+        using unique chunks, with chunk-frequency maps, and only sparse marges on the affected chunks. Read about the optimization process <a href="https://jashshshahisok.medium.com/tokenization-slow-to-fast-7fa0145ff2be">here.</a>
+    </p>
+</div>
+
+<div class="results">
+    <h3>Benchmarking tokenizers on different vocabulary sizes</h3>
+    <p>
+        I benchmark each tokenizer on varying vocabulary sizes from 1000, to 50257 (the max size), and plot things like token count, bytes-per-token, token-per-count, unique tokens.
+        These are the results:
+
+        <div class="gpt4-100mb">
+            <H4>100MB, GPT4 REGEX</H4>
+            <img src="{{ url_for('static', filename='images/image_gpt4_100MB.png')}}" alt="Benchmark results for the tokenizer on 100MB data, GPT4 REGEX">
+        </div>
+    </p>
+</div>
+
+{% endblock %}

@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, request, url_for
 from utils import encode_decode
 import time
+import math
 
 app = Flask(__name__)
 
-available_tokenizers = {"100MB_GPT4"}
+available_tokenizers = {"100MB_GPT4", "50MB_GPT4"}
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -29,10 +30,20 @@ def index():
             results_dict = encode_decode(text, vocab_size, tokenizer)
             end_time = time.perf_counter()
             
-            return render_template('index.html', results=results_dict, total_time=(end_time -  start_time), length=len(text))
+            return render_template('index.html', results=results_dict, total_time=round((end_time -  start_time), 3), length_=len(text))
         
     else:
         return render_template('index.html')
+    
+@app.route("/blog", methods=["GET"])
+def blog():
+    
+    return render_template('blog.html')
+
+@app.route("/tutorial", methods=["GET"])
+def tutorial():
+    
+    return render_template('tutorial.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,17 @@
+Added news article in english with text size 0.12 MB.
+Added wikipedia data in english with text size 4.88 MB.
+Added news article in hindi with text size 2.47 MB.
+Added wikipedia data in hindi with text size 2.01 MB.
+Added news article in spanish with text size 0.46 MB.
+Added wikipedia data in spanish with text size 4.54 MB.
+Added news article in german with text size 0.36 MB.
+Added wikipedia data in german with text size 4.64 MB.
+Added news article in french with text size 0.08 MB.
+Added wikipedia data in french with text size 4.92 MB.
+Added news article in japanese with text size 0.63 MB.
+Added wikipedia data in japanese with text size 4.37 MB.
+Added github data for python with text size 4.02 MB.
+Added github data for cpp with text size 4.17 MB.
+Added github data for javascript with text size 4.01 MB.
+Added github data for java with text size 4.02 MB.
+Added github data for rust with text size 4.17 MB.

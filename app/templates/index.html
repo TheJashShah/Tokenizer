@@ -2,232 +2,26 @@
 
 {% block head %}
 <title>Tokenizer Playground</title>
-
-<style>
-
-    body {
-        margin: 0;
-        padding: 40px 20px;
-        background: #f4f1e8;
-        color: #252525;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-    }
-
-    h1 {
-        max-width: 1000px;
-        margin: 0 auto 8px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 2.2rem;
-        font-weight: 500;
-        letter-spacing: -0.5px;
-    }
-
-    h1 + p {
-        max-width: 1000px;
-        margin: 0 auto 30px;
-        color: #666;
-        font-size: 1rem;
-    }
-
-    .form,
-    .results {
-        max-width: 1000px;
-        margin: 0 auto 24px;
-        padding: 26px 30px;
-        background: #fffdf7;
-        border: 1px solid #ddd8ca;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    form {
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 14px;
-    }
-
-    input,
-    select,
-    textarea {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px 12px;
-        background: #faf9f4;
-        border: 1px solid #cfc9bb;
-        border-radius: 3px;
-        color: #292929;
-        font-family: inherit;
-        font-size: 0.95rem;
-        outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-        border-color: #888;
-        background: #fffefb;
-    }
-
-    textarea {
-        grid-column: 1 / -1;
-        min-height: 150px;
-        resize: vertical;
-        font-family: ui-monospace, "SF Mono", Consolas, monospace;
-        line-height: 1.5;
-    }
-
-    input[type="submit"] {
-        grid-column: 1 / -1;
-        width: fit-content;
-        padding: 10px 18px;
-        background: #292929;
-        color: #fffdf7;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        transition: background 0.15s ease;
-    }
-
-    input[type="submit"]:hover {
-        background: #444;
-    }
-
-    .results {
-        line-height: 1.5;
-    }
-
-    .tokenizer-result {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-    }
-
-    .custom-result,
-    .gpt2-result,
-    .gpt4-result {
-        padding: 18px;
-        border: 1px solid #ddd8ca;
-        background: #fffefb;
-    }
-
-    .custom-result {
-        border-left: 3px solid #555;
-    }
-
-    .gpt2-result {
-        border-left: 3px solid #888;
-    }
-
-    .gpt4-result {
-        border-left: 3px solid #aaa;
-    }
-
-    .custom-result p,
-    .gpt2-result p,
-    .gpt4-result p {
-        margin: 6px 0;
-    }
-
-    .custom-result p:first-child,
-    .gpt2-result p:first-child,
-    .gpt4-result p:first-child {
-        font-family: ui-monospace, "SF Mono", Consolas, monospace;
-        font-size: 0.9rem;
-        word-break: break-word;
-    }
-
-    .token-string {
-        font-family: ui-monospace, "SF Mono", Consolas, monospace;
-        font-size: 0.95rem;
-        line-height: 1.9;
-        white-space: pre-wrap;
-        word-break: break-word;
-    }
-
-    .tok {
-        padding: 2px 3px;
-        border-radius: 2px;
-    }
-
-    .tok-unk {
-        background: #eeeeee;
-        color: #999;
-        font-style: italic;
-        outline: 1px dashed #aaa;
-        outline-offset: -1px;
-    }
-
-    .tok-0 { background: #e8eee3; }
-    .tok-1 { background: #e4e9ed; }
-    .tok-2 { background: #eee7df; }
-    .tok-3 { background: #e9e4ed; }
-    .tok-4 { background: #eee3e3; }
-    .tok-5 { background: #e3ebe8; }
-
-    .tokenizer-result > p {
-        grid-column: 1 / -1;
-        margin: 0;
-        color: #666;
-        font-size: 0.9rem;
-    }
-
-    .error {
-        margin: 0;
-        padding: 12px 15px;
-        background: #f5e8e5;
-        border-left: 3px solid #9b5c52;
-        color: #713e37;
-    }
-
-    @media (max-width: 900px) {
-        .tokenizer-result {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 650px) {
-        body {
-            padding: 25px 12px;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-        }
-
-        .form,
-        .results {
-            padding: 20px;
-        }
-
-        form {
-            grid-template-columns: 1fr;
-        }
-
-        input,
-        select,
-        textarea {
-            grid-column: 1 / -1;
-        }
-    }
-    </style>
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/file.css') }}">
 {% endblock %}
 
 {% block body %}
 
 <h1>Tokenizer Playground</h1>
 
-<p>Select any of my custom-trained tokenizers, vary the vocabulary size and compare with the GPT-2 and the GPT-4 Tokenizers.</p>
+<p>
+    Select any of my custom-trained tokenizers, vary the vocabulary size and compare with the GPT-2 and the GPT-4 Tokenizers.
+    Read more about the project and my process <a href="/blog">here.</a>
+</p>
 
 <div class="form">
     <form action="/" method="POST">
-        <input type="number" name="vocab" id="vocab" placeholder="Enter any number between 256 and 50257...">
+        <input type="number" name="vocab" id="vocab" placeholder="Enter any number between 256 and 50257..." value="50257">
         <select name="tokenizer" id="tokenizer">
+            <option value="50MB_GPT2">50MB, GPT-2 Regex</option>
+            <option value="50MB_GPT4">50MB, GPT-4 Regex</option>
             <option value="100MB_GPT2">100MB, GPT-2 Regex</option>
             <option value="100MB_GPT4">100MB, GPT-4 Regex</option>
-            <option value="500MB_GPT2">500MB, GPT-2 Regex</option>
-            <option value="500MB_GPT4">500MB, GPT-4 Regex</option>
-            <option value="1GB_GPT2">1GB, GPT-2 Regex</option>
-            <option value="1GB_GPT4">1GB, GPT-4 Regex</option>
         </select>
         <textarea name="text" id="text" placeholder="Enter any random text..."></textarea>
         <input type="submit" name="tokenize" id="tokenize" value="Tokenize and Compare">
@@ -239,6 +33,7 @@
     {% if results %}
         <div class="tokenizer-result">
             <div class="custom-result">
+                <h2>Our Tokenizer:</h2>
                 <p>Tokens: {{ results['tokens_custom'] }}</p>
                 <p>Number of Tokens: {{ results['tokens_custom']|length }}</p>
                 <p>Highlighted Text:
@@ -254,6 +49,7 @@
                 {% endif %}
             </div>
             <div class="gpt2-result">
+                <h2>GPT-2 Tokenizer:</h2>
                 <p>Tokens: {{ results['tokens_gpt2'] }}</p>
                 <p>Number of Tokens: {{ results['tokens_gpt2']|length }}</p>
                 <p>Highlighted Text:
@@ -268,6 +64,7 @@
                 <p>Vocab Size: {{ results['vocab_size_gpt2'] }}</p>
             </div>
             <div class="gpt4-result">
+                <h2>GPT-4 Tokenizer:</h2>
                 <p>Tokens: {{ results['tokens_gpt4'] }}</p>
                 <p>Number of Tokens: {{ results['tokens_gpt4']|length }}</p>
                 <p>Highlighted Text:
@@ -282,7 +79,7 @@
                 <p>Vocab Size: {{ results['vocab_size_gpt4'] }}</p>
             </div>
             <p>Total time taken: {{ total_time }}</p>
-            <p>Length of text: {{ Length }}</p>
+            <p>Length of text: {{ length_ }}</p>
         </div>
     {% elif error %}
         <p class="error">{{ error }}</p>

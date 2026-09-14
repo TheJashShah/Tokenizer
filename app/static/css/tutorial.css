@@ -1,0 +1,351 @@
+:root {
+    --jp-code-font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+    --jp-content-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --jp-cell-prompt-width: 64px;
+    --jp-input-prompt-color: #307fc1;
+    --jp-output-prompt-color: #bf5b3d;
+    --jp-cell-input-bg: #f7f7f7;
+    --jp-layout-color0: #ffffff;
+    --jp-layout-color1: #f7f7f7;
+    --jp-border-color1: #e0e0e0;
+    --jp-content-font-color0: #000000;
+    --jp-content-font-color1: #333333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--jp-content-font-family);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--jp-content-font-color0);
+    background-color: var(--jp-layout-color0);
+    margin: 0;
+    padding: 0;
+}
+
+.notebook-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cell structure */
+.cell {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.cell-prompt {
+    min-width: var(--jp-cell-prompt-width);
+    width: var(--jp-cell-prompt-width);
+    font-family: var(--jp-code-font-family);
+    font-size: 12px;
+    padding: 10px 8px 10px 0;
+    text-align: right;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.cell-content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Input prompt styling - Jupyter blue */
+.input-prompt {
+    color: var(--jp-input-prompt-color);
+    font-weight: bold;
+}
+
+/* Output prompt styling - Jupyter red/orange */
+.output-prompt {
+    color: var(--jp-output-prompt-color);
+    font-weight: bold;
+}
+
+/* Code cell input area */
+.input-area {
+    background-color: var(--jp-cell-input-bg);
+    border: 1px solid var(--jp-border-color1);
+    border-radius: 2px;
+    padding: 8px 12px;
+    overflow-x: auto;
+}
+
+.input-area pre {
+    margin: 0;
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Output area */
+.output-area {
+    margin-top: 0;
+}
+
+.output-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+}
+
+.output-content {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 0;
+}
+
+.output-content pre {
+    margin: 0;
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Stream output (stdout/stderr) */
+.output-stream {
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.output-stderr {
+    background-color: #fdd;
+    padding: 8px 12px;
+    border-radius: 2px;
+}
+
+/* Execute result / display data */
+.output-result {
+    padding: 4px 0;
+}
+
+.output-result pre {
+    margin: 0;
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+}
+
+/* Image output */
+.output-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* HTML output (DataFrames, etc.) */
+.output-html {
+    overflow-x: auto;
+}
+
+.output-html table {
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: var(--jp-content-font-family);
+}
+
+.output-html table th,
+.output-html table td {
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.output-html table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.output-html table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Error output */
+.output-error {
+    background-color: #fff0f0;
+    padding: 8px 12px;
+    border-radius: 2px;
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+
+/* Markdown cell styling */
+.markdown-cell {
+    padding: 10px 0;
+}
+
+.markdown-cell h1 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0.67em 0;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--jp-border-color1);
+}
+
+.markdown-cell h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0.83em 0;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--jp-border-color1);
+}
+
+.markdown-cell h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.markdown-cell h4 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 1.33em 0;
+}
+
+.markdown-cell h5 {
+    font-size: 0.875em;
+    font-weight: 600;
+    margin: 1.67em 0;
+}
+
+.markdown-cell h6 {
+    font-size: 0.85em;
+    font-weight: 600;
+    margin: 2.33em 0;
+    color: #6a737d;
+}
+
+.markdown-cell p {
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.markdown-cell code {
+    font-family: var(--jp-code-font-family);
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.markdown-cell pre {
+    background-color: var(--jp-cell-input-bg);
+    border: 1px solid var(--jp-border-color1);
+    border-radius: 3px;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: 85%;
+    line-height: 1.45;
+}
+
+.markdown-cell pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 100%;
+}
+
+.markdown-cell blockquote {
+    margin: 0 0 16px 0;
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 4px solid #dfe2e5;
+}
+
+.markdown-cell ul,
+.markdown-cell ol {
+    margin: 0 0 16px 0;
+    padding-left: 2em;
+}
+
+.markdown-cell li {
+    margin: 0.25em 0;
+}
+
+.markdown-cell a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdown-cell a:hover {
+    text-decoration: underline;
+}
+
+.markdown-cell hr {
+    border: 0;
+    border-top: 1px solid var(--jp-border-color1);
+    margin: 24px 0;
+}
+
+.markdown-cell img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdown-cell table {
+    border-collapse: collapse;
+    margin: 0 0 16px 0;
+}
+
+.markdown-cell table th,
+.markdown-cell table td {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
+}
+
+.markdown-cell table th {
+    font-weight: 600;
+    background-color: #f6f8fa;
+}
+
+.markdown-cell table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+/* Raw cell styling */
+.raw-cell {
+    background-color: var(--jp-layout-color1);
+    border: 1px solid var(--jp-border-color1);
+    border-radius: 2px;
+    padding: 8px 12px;
+    font-family: var(--jp-code-font-family);
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+
+/* Empty prompt placeholder */
+.prompt-empty {
+    color: transparent;
+}
+
+.export-footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--jp-border-color1);
+    color: #555;
+    font-size: 13px;
+    text-align: center;
+}
+
+.export-footer a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.export-footer a:hover {
+    text-decoration: underline;
+}

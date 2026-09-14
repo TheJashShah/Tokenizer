@@ -9,11 +9,11 @@ from train_inverted import InvertedJashTokenizer
 Run data_collection as a seperate script, then just input the dataset folder, and the output folder name, to train the tokenizer, then run experiments on it.
 '''
 
-data_folder = os.path.join(os.getcwd(), "datasets", "data_100_MB") # tokenizer train text
+data_folder = os.path.join(os.getcwd(), "datasets", "data_50_MB") # tokenizer train text
 with open(os.path.join(data_folder, "output.txt"), "r", encoding="utf-8") as f:
     train_text = f.read()
 
-folder_path = os.path.join(os.getcwd(), "output_files", "tokenizer_100MB_GPT4")
+folder_path = os.path.join(os.getcwd(), "output_files", "tokenizer_50MB_GPT4")
 os.makedirs(folder_path, exist_ok=True)# output folder
 
 GPT2_SPLIT_PATTERN = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""

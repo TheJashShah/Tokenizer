@@ -1,0 +1,375 @@
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #f7f4eb;
+    background-image: radial-gradient(#e2dcd0 0.75px, transparent 0.75px);
+    background-size: 16px 16px;
+    color: #2b2b2b;
+    font-family: "ETBook", "Baskerville", "Crimson Text", "Georgia", serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    max-width: 1000px;
+    margin: 0 auto 8px;
+    font-family: "ETBook", "Baskerville", "Georgia", serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    color: #1a1a1a;
+}
+
+h1 + p {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    color: #6e6b63;
+    font-size: 1.05rem;
+    font-style: italic;
+}
+
+.form,
+.results {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 30px 34px;
+    background: #fffcf7;
+    border: 1px solid #e3decb;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(60, 50, 30, 0.05), 0 1px 3px rgba(60, 50, 30, 0.03);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 14px;
+    background: #faf8f2;
+    border: 1px solid #dcd5c4;
+    border-radius: 3px;
+    color: #2b2b2b;
+    font-family: inherit;
+    font-size: 0.98rem;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8c8273;
+    background: #ffffff;
+}
+
+textarea,
+.token-string-box {
+    grid-column: 1 / -1;
+    min-height: 180px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #dcd5c4;
+    border-radius: 3px;
+    background: #faf8f2;
+    font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", ui-monospace, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    grid-column: 1 / -1;
+    width: fit-content;
+    padding: 10px 22px;
+    background: #3b3733;
+    color: #fcfbfa;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+input[type="submit"]:hover {
+    background: #1a1816;
+}
+
+.results {
+    line-height: 1.6;
+}
+
+.tokenizer-result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.custom-result,
+.gpt2-result,
+.gpt4-result {
+    padding: 20px;
+    border: 1px solid #e5dfd0;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.custom-result { border-top: 3px solid #5c5549; }
+.gpt2-result   { border-top: 3px solid #8c8273; }
+.gpt4-result   { border-top: 3px solid #b5ac9e; }
+
+.token-ids-container {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: #555;
+    margin: 8px 0;
+    word-break: break-word;
+}
+
+.token-ids-summary {
+    cursor: pointer;
+    user-select: none;
+    padding: 4px 6px;
+    background: #f4f0e6;
+    border-radius: 3px;
+    display: inline-block;
+    transition: background 0.15s ease;
+}
+
+.token-ids-summary:hover {
+    background: #ebe4d5;
+}
+
+.tok {
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.tok-unk {
+    background: #e5e2db;
+    color: #777;
+    font-style: italic;
+    outline: 1px dashed #aaa;
+    outline-offset: -1px;
+}
+
+.tok-0 { background: #e3ebd9; }
+.tok-1 { background: #dce5eb; }
+.tok-2 { background: #f0e6d8; }
+.tok-3 { background: #ebdceb; }
+.tok-4 { background: #f0dada; }
+.tok-5 { background: #daebe6; }
+
+.tokenizer-result > p {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #777267;
+    font-size: 0.9rem;
+}
+
+.error {
+    margin: 0;
+    padding: 12px 15px;
+    background: #f7ece9;
+    border-left: 3px solid #a8584d;
+    color: #6e3027;
+}
+
+@media (max-width: 900px) {
+    .tokenizer-result {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    body { padding: 25px 12px; }
+    h1 { font-size: 1.9rem; }
+    .form, .results { padding: 20px; }
+    form { grid-template-columns: 1fr; }
+}
+
+.introduction,
+.tutorial,
+.data,
+.tokenizers {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 28px 34px;
+
+    background: #fffcf7;
+    border: 1px solid #e3decb;
+    border-radius: 2px;
+
+    box-shadow:
+        0 4px 12px rgba(60, 50, 30, 0.05),
+        0 1px 3px rgba(60, 50, 30, 0.03);
+
+    line-height: 1.75;
+}
+
+.introduction h3,
+.tutorial h3,
+.data h3,
+.tokenizers h3,
+.results h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+
+    font-family: "ETBook", "Baskerville", "Georgia", serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+
+    color: #25231f;
+}
+
+.introduction p,
+.tutorial p,
+.data p,
+.tokenizers p,
+.results p {
+    margin: 0;
+
+    font-size: 1.02rem;
+    color: #4f4b44;
+}
+
+a {
+    color: #5c5549;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #1f1d1a;
+}
+
+h1 {
+    max-width: 1068px;
+    margin: 0 auto 30px;
+
+    font-size: 2.7rem;
+    line-height: 1.2;
+}
+
+.results {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 30px 34px;
+
+    background: #fffcf7;
+    border: 1px solid #e3decb;
+    border-radius: 2px;
+
+    box-shadow:
+        0 4px 12px rgba(60, 50, 30, 0.05),
+        0 1px 3px rgba(60, 50, 30, 0.03);
+
+    line-height: 1.7;
+}
+
+.results > p {
+    margin-bottom: 24px;
+}
+
+.gpt4-100mb {
+    margin-top: 28px;
+    padding-top: 22px;
+
+    border-top: 1px solid #e3decb;
+}
+
+.gpt4-100mb h4 {
+    margin: 0 0 18px;
+
+    font-family: "ETBook", "Baskerville", "Georgia", serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    color: #38342e;
+}
+
+.gpt4-100mb img {
+    display: block;
+
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+
+    margin: 0 auto;
+
+    border: 1px solid #e3decb;
+    background: #ffffff;
+}
+
+.introduction {
+    margin-top: 0;
+}
+
+.tutorial {
+    margin-top: 0;
+}
+
+.data {
+    margin-top: 0;
+}
+
+.tokenizers {
+    margin-top: 0;
+}
+
+::selection {
+    background: #ddd7c9;
+    color: #1f1d1a;
+}
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 22px;
+    }
+
+    .introduction,
+    .tutorial,
+    .data,
+    .tokenizers,
+    .results {
+        padding: 22px 20px;
+        margin-bottom: 18px;
+    }
+
+    .introduction h3,
+    .tutorial h3,
+    .data h3,
+    .tokenizers h3,
+    .results h3 {
+        font-size: 1.3rem;
+    }
+
+    .introduction p,
+    .tutorial p,
+    .data p,
+    .tokenizers p,
+    .results p {
+        font-size: 0.98rem;
+    }
+
+    .gpt4-100mb img {
+        width: 100%;
+    }
+}
