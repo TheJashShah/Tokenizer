@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for
-from utils import encode_decode
+from .utils import encode_decode
 import time
 import math
 
